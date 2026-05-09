@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Mother's Day</title>
+    <link rel="stylesheet" href="mothersday.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="card-scene">
+      <div class="petals-bg" id="petal-bg"></div>
+      <div class="confetti-area" id="confetti-area"></div>
+
+      <div class="card-envelope" id="envelope" onclick="openCard()">
+        <div class="envelope-body" id="env-body">
+          <div class="envelope-flap" id="env-flap"></div>
+          <div class="envelope-seal" id="env-seal">
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none">
+              <path
+                d="M10 16S1 10 1 5a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 5-9 11-9 11z"
+                fill="#fff"
+              />
+            </svg>
+          </div>
+        </div>
+        <p class="envelope-label">Tap to open</p>
+      </div>
+
+      <div class="card-wrapper">
+        <div class="greeting-card hidden-card" id="greeting-card">
+          <div class="card-top">
+            <div class="card-top-circles"></div>
+            <div class="card-top-circles2"></div>
+
+            <div class="card-illustration">
+              <svg
+                width="160"
+                height="140"
+                viewBox="0 0 160 140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="80" cy="68" r="56" fill="#f4b8cc" opacity="0.5" />
+                <path
+                  d="M80 52 C80 52 62 40 55 52 C48 64 68 76 80 88 C92 76 112 64 105 52 C98 40 80 52 80 52Z"
+                  fill="#e8658a"
+                />
+                <ellipse cx="56" cy="74" rx="16" ry="22" fill="#e8658a" />
+                <ellipse cx="56" cy="58" rx="12" ry="13" fill="#e8658a" />
+                <ellipse cx="62" cy="72" rx="9" ry="13" fill="#f4a7bd" />
+                <ellipse cx="62" cy="62" rx="7" ry="8" fill="#f4a7bd" />
+                <ellipse cx="80" cy="42" rx="13" ry="14" fill="#e8658a" />
+                <path
+                  d="M67 56 C67 56 62 50 62 42 C62 34 67 28 80 28 C93 28 98 34 98 42 C98 48 92 56 92 56 Z"
+                  fill="#e8658a"
+                />
+                <ellipse cx="80" cy="29" rx="13" ry="14" fill="#f4a7bd" />
+                <path
+                  d="M97 38 C100 31 107 27 112 31 C117 35 115 45 107 47 Z"
+                  fill="#f4a7bd"
+                />
+                <circle cx="98" cy="24" r="5" fill="#f4b8cc" />
+                <circle cx="106" cy="18" r="3" fill="#e8658a" />
+                <circle cx="112" cy="24" r="2" fill="#f4b8cc" />
+                <path
+                  d="M32 100 Q36 92 44 94 Q40 108 32 112 Z"
+                  fill="#e8658a"
+                  opacity="0.7"
+                />
+                <path
+                  d="M128 100 Q124 92 116 94 Q120 108 128 112 Z"
+                  fill="#e8658a"
+                  opacity="0.7"
+                />
+                <path
+                  d="M20 118 Q30 105 50 108 Q45 122 20 118 Z"
+                  fill="#f4b8cc"
+                  opacity="0.8"
+                />
+                <path
+                  d="M140 118 Q130 105 110 108 Q115 122 140 118 Z"
+                  fill="#f4b8cc"
+                  opacity="0.8"
+                />
+                <text
+                  x="104"
+                  y="56"
+                  font-size="16"
+                  fill="#c0476c"
+                  font-family="serif"
+                >
+                  ♥
+                </text>
+                <text
+                  x="38"
+                  y="48"
+                  font-size="12"
+                  fill="#e8658a"
+                  font-family="serif"
+                >
+                  ♥
+                </text>
+                <text
+                  x="116"
+                  y="70"
+                  font-size="10"
+                  fill="#f4b8cc"
+                  font-family="serif"
+                >
+                  ♥
+                </text>
+              </svg>
+            </div>
+
+            <div class="card-title-row">
+              <p class="card-subtitle">A special message for you</p>
+              <h1 class="card-title">Happy <strong>Mother's</strong> Day</h1>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-message">
+              To the woman who taught us how to be kind, how to be brave, and
+              how to be forgiving — you are our greatest blessing and our
+              forever home. We are so grateful that you are our mother. We love
+              you so so much!
+            </p>
+
+            <p class="card-from1">From:</p>
+
+            <div class="card-flowers">
+              <div class="flower-item">
+                <svg width="44" height="50" viewBox="0 0 44 50" fill="none">
+                  <ellipse cx="22" cy="14" rx="8" ry="12" fill="#f4b8cc" />
+                  <ellipse
+                    cx="32"
+                    cy="20"
+                    rx="8"
+                    ry="12"
+                    fill="#e8658a"
+                    transform="rotate(60 32 20)"
+                  />
+                  <ellipse
+                    cx="28"
+                    cy="34"
+                    rx="8"
+                    ry="12"
+                    fill="#f4b8cc"
+                    transform="rotate(120 28 34)"
+                  />
+                  <ellipse
+                    cx="16"
+                    cy="34"
+                    rx="8"
+                    ry="12"
+                    fill="#e8658a"
+                    transform="rotate(-120 16 34)"
+                  />
+                  <ellipse
+                    cx="12"
+                    cy="20"
+                    rx="8"
+                    ry="12"
+                    fill="#f4b8cc"
+                    transform="rotate(-60 12 20)"
+                  />
+                  <circle cx="22" cy="24" r="7" fill="#fce4ef" />
+                  <circle cx="22" cy="24" r="4" fill="#e8658a" />
+                  <rect
+                    x="20"
+                    y="32"
+                    width="4"
+                    height="16"
+                    rx="2"
+                    fill="#97C459"
+                  />
+                  <ellipse
+                    cx="28"
+                    cy="40"
+                    rx="7"
+                    ry="5"
+                    fill="#97C459"
+                    transform="rotate(-30 28 40)"
+                  />
+                </svg>
+                <span class="flower-label">Manang</span>
+              </div>
+              <div class="flower-item">
+                <svg width="44" height="50" viewBox="0 0 44 50" fill="none">
+                  <ellipse cx="22" cy="12" rx="7" ry="11" fill="#ED93B1" />
+                  <ellipse
+                    cx="33"
+                    cy="18"
+                    rx="7"
+                    ry="11"
+                    fill="#D4537E"
+                    transform="rotate(60 33 18)"
+                  />
+                  <ellipse
+                    cx="30"
+                    cy="32"
+                    rx="7"
+                    ry="11"
+                    fill="#ED93B1"
+                    transform="rotate(120 30 32)"
+                  />
+                  <ellipse
+                    cx="14"
+                    cy="32"
+                    rx="7"
+                    ry="11"
+                    fill="#D4537E"
+                    transform="rotate(-120 14 32)"
+                  />
+                  <ellipse
+                    cx="11"
+                    cy="18"
+                    rx="7"
+                    ry="11"
+                    fill="#ED93B1"
+                    transform="rotate(-60 11 18)"
+                  />
+                  <circle cx="22" cy="22" r="7" fill="#fce4ef" />
+                  <circle cx="22" cy="22" r="4" fill="#D4537E" />
+                  <rect
+                    x="20"
+                    y="30"
+                    width="4"
+                    height="18"
+                    rx="2"
+                    fill="#3B6D11"
+                  />
+                  <ellipse
+                    cx="14"
+                    cy="42"
+                    rx="7"
+                    ry="5"
+                    fill="#3B6D11"
+                    transform="rotate(30 14 42)"
+                  />
+                </svg>
+                <span class="flower-label">Dianne</span>
+              </div>
+              <div class="flower-item">
+                <svg width="44" height="50" viewBox="0 0 44 50" fill="none">
+                  <ellipse cx="22" cy="13" rx="8" ry="11" fill="#f9d0de" />
+                  <ellipse
+                    cx="32"
+                    cy="19"
+                    rx="8"
+                    ry="11"
+                    fill="#f4b8cc"
+                    transform="rotate(60 32 19)"
+                  />
+                  <ellipse
+                    cx="29"
+                    cy="33"
+                    rx="8"
+                    ry="11"
+                    fill="#f9d0de"
+                    transform="rotate(120 29 33)"
+                  />
+                  <ellipse
+                    cx="15"
+                    cy="33"
+                    rx="8"
+                    ry="11"
+                    fill="#f4b8cc"
+                    transform="rotate(-120 15 33)"
+                  />
+                  <ellipse
+                    cx="12"
+                    cy="19"
+                    rx="8"
+                    ry="11"
+                    fill="#f9d0de"
+                    transform="rotate(-60 12 19)"
+                  />
+                  <circle cx="22" cy="23" r="7" fill="#fce4ef" />
+                  <circle cx="22" cy="23" r="4" fill="#e8658a" />
+                  <rect
+                    x="20"
+                    y="31"
+                    width="4"
+                    height="17"
+                    rx="2"
+                    fill="#639922"
+                  />
+                  <ellipse
+                    cx="30"
+                    cy="43"
+                    rx="7"
+                    ry="5"
+                    fill="#639922"
+                    transform="rotate(-30 30 43)"
+                  />
+                </svg>
+                <span class="flower-label">Orlie</span>
+              </div>
+            </div>
+
+            <p class="card-from2">
+              With all our love — always <span class="sparkling-heart">♥</span>
+            </p>
+
+            <div class="action-row">
+              <button class="btn-replay" onclick="replayCard()">Replay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="mothersday.js"></script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.card-scene {
+  width: 100%;
+  padding: 32px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff5f8;
+  min-height: 560px;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.petals-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  width: 18px; height: 18px;
+  border-radius: 60% 40% 60% 40%;
+  opacity: 0;
+  animation: petalFall linear infinite;
+}
+
+@keyframes petalFall {
+  0%   { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(580px) rotate(180deg); opacity: 0; }
+}
+
+.card-envelope {
+  width: min(440px, 96%);
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.envelope-body {
+  background: #f9d0de;
+  border-radius: 12px 12px 6px 6px;
+  height: 60px;
+  position: relative;
+  box-shadow: 0 2px 0 #e8a8be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  background: #f4b8cc;
+  transform-origin: top center;
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+  z-index: 3;
+  border-radius: 6px 6px 0 0;
+}
+
+.envelope-body.open .envelope-flap {
+  transform: rotateX(-180deg);
+}
+
+.envelope-seal {
+  width: 38px; height: 38px;
+  background: #e8658a;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 4;
+  transition: transform 0.3s;
+}
+
+.envelope-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #c0476c;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.card-wrapper {
+  width: min(440px, 96%);
+  position: relative;
+  z-index: 2;
+  margin-top: 8px;
+}
+
+.greeting-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(232,101,138,0.15);
+  transform: translateY(0px) scale(1);
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1), box-shadow 0.7s;
+  transform-origin: top center;
+}
+
+.greeting-card.hidden-card {
+  transform: translateY(-20px) scaleY(0);
+  transform-origin: top center;
+  box-shadow: none;
+}
+
+.card-top {
+  background: #fce4ef;
+  padding: 32px 28px 24px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-top-circles {
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(244,184,204,0.4);
+}
+
+.card-top-circles2 {
+  position: absolute;
+  bottom: -30px; left: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(244,184,204,0.3);
+}
+
+.card-illustration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title-row {
+  position: relative; z-index: 1;
+}
+
+.card-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c0476c;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 36px;
+  color: #c0476c;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.card-title strong {
+  font-style: normal;
+  font-weight: 700;
+  color: #e8658a;
+}
+
+.card-body {
+  padding: 28px 32px 32px;
+  text-align: center;
+}
+
+.card-message {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #7a3d55;
+  line-height: 1.9;
+  margin-bottom: 24px;
+  border-left: 3px solid #f4b8cc;
+  padding-left: 16px;
+  text-align: left;
+}
+
+.card-flowers {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.flower-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: flowerBob 3s ease-in-out infinite;
+}
+
+.flower-item:nth-child(2) { animation-delay: 0.4s; }
+.flower-item:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes flowerBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.flower-label {
+  font-size: 11px;
+  color: #c0476c;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.card-from1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #e8658a;
+  border-top: 1px dashed #f4b8cc;
+  padding-top: 20px;
+  margin-top: 4px;
+  position: absolute;
+}
+
+.card-from2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #e8658a;
+  border-top: 1px dashed #f4b8cc;
+  padding-top: 20px;
+  margin-top: 4px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-replay {
+  background: #fce4ef;
+  color: #c0476c;
+  border: 1px solid #f4b8cc;
+  border-radius: 25px;
+  padding: 12px 24px;
+  position: center;
+}
+
+.btn-share:hover { background: #c0476c; transform: scale(1.04); }
+.btn-replay:hover { background: #f4b8cc; transform: scale(1.04); }
+
+.confetti-area {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.conf-piece {
+  position: absolute;
+  width: 10px; height: 10px;
+  opacity: 0;
+  animation: confettiFall 2s ease-in forwards;
+  border-radius: 2px;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(520px) rotate(540deg); opacity: 0; }
+}
+
+.sparkling-heart {
+  display: inline-block;
+  animation: heartPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-scene {
+    padding: 28px 16px 36px;
+  }
+ 
+  .card-title {
+    font-size: 30px;
+  }
+ 
+  .card-body {
+    padding: 24px 26px 28px;
+  }
+ 
+  .card-message {
+    font-size: 14px;
+  }
+ 
+  .action-row {
+    gap: 10px;
+  }
+ 
+  .btn-share,
+  .btn-replay {
+    padding: 11px 22px;
+  }
+}
